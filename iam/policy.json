@@ -1,0 +1,67 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "BedrockInvokeModel",
+			"Effect": "Allow",
+			"Action": [
+				"bedrock:InvokeModel"
+			],
+			"Resource": "arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-lite-v1:0"
+		},
+		{
+			"Sid": "s3Trello",
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetObject",
+				"s3:PutObject",
+				"s3:DeleteObject",
+				"s3:ListBucket"
+			],
+			"Resource": [
+				"arn:aws:s3:::TU_NOMBRE_DE_BUCKET",
+				"arn:aws:s3:::TU_NOMBRE_DE_BUCKET/*"
+			]
+		},
+		{
+			"Sid": "SecretManagerTrello",
+			"Effect": "Allow",
+			"Action": [
+				"secretsmanager:GetSecretValue"
+			],
+			"Resource": [
+				"arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:prod/trello-token-XXXXXX"
+			]
+		},
+		{
+			"Sid": "GlueTrello",
+			"Effect": "Allow",
+			"Action": [
+				"glue:CreateSession",
+				"glue:GetSession",
+				"glue:ListSessions",
+				"glue:StopSession",
+				"glue:DeleteSession",
+				"glue:RunStatement",
+				"glue:GetStatement",
+				"glue:TagResource"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "AllowPassGlueRole",
+			"Effect": "Allow",
+			"Action": "iam:PassRole",
+			"Resource": "arn:aws:iam::ACCOUNT_ID:role/glue-trello-role-name"
+		},
+		{
+			"Sid": "SESGlueEmail",
+			"Effect": "Allow",
+			"Action": [
+				"ses:SendEmail",
+				"ses:SendRawEmail"
+			],
+			"Resource": "*"
+		}
+	]
+}
