@@ -11,7 +11,7 @@ As the number of interdependent tasks and contributors grows, understanding the 
 
 <center>
 
-![preview](img/trello-preview-title.png)
+![preview](img/trello-aws-preview.png)
 
 </center>
 
