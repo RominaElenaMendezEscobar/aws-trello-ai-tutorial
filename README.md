@@ -76,3 +76,9 @@ Supports tables, lists, and structured summaries
 🔐AWS Secrets Manager: securely stores Trello API credentials
 🪣Amazon S3: stores datasets, prompts, and generated reports
 📩Amazon SES: distributes automated reports via email
+
+
+----
+
+# Full article
+[🔗 Dev.to - Data-Driven Project Analysis: Analyzing Trello Kanban Projects with AI on AWS Bedrock](https://dev.to/aws-builders/data-driven-project-analysis-analyzing-trello-kanban-projects-with-ai-on-aws-bedrock-15f4)
